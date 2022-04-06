@@ -9,5 +9,7 @@ db.sequelize = sequelize;
 // db.tutorials = require("./models/tutorials.js")(sequelize, Sequelize);
 db.proyecto = require("./models/proyecto.js")(sequelize, Sequelize);
 db.contacto = require("./models/contacto.js")(sequelize, Sequelize);
+db.tecnologia = require("./models/tecnologia.js")(sequelize, Sequelize);
+require("./models/tecnologia_proyecto")(sequelize, Sequelize)
 db.sequelize.sync();
 module.exports = db;

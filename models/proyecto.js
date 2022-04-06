@@ -18,9 +18,13 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.DATE,
         allowNull: false
       },
-      imgURL:{
+      imgUrl:{
           type: Sequelize.STRING,
           allowNull:true
+      },
+      githubLink:{
+        type: Sequelize.STRING,
+        allowNull:true
       }
     },
     {

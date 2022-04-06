@@ -1,8 +1,11 @@
 const express = require('express')
 var router = express.Router();
-
-router.post('/contacto', (req, res)=>{
+const db = require("../db-init");
+router.post('/contacto', async(req, res)=>{
     console.log(req.body)
-    res.send('Hello users')
+    const {name, email, message} = req.body
+    console.log({nombreCompleto: name, email, message})
+    const contacto = await db.contacto.create({nombreCompleto: name, correo:email, mensaje: message})
+    res.send(contacto)
 })
 module.exports = router
